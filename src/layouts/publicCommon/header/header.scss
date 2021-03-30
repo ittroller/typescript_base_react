@@ -1,0 +1,27 @@
+.layout-header {
+  display: flex;
+  flex: 0;
+  height: 64px;
+
+  .wrap-header {
+    width: 100%;
+    height: initial;
+
+    .logo {
+      float: left;
+      width: 120px;
+      height: 31px;
+      margin-right: 16px;
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .main-menu {
+      height: 100%;
+
+      .menu-item {
+        height: 100%;
+        vertical-align: initial;
+      }
+    }
+  }
+}
