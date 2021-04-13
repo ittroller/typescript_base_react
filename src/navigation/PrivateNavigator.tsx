@@ -1,4 +1,4 @@
-import React, { lazy, useEffect, memo, Component } from 'react';
+import React, { lazy, useEffect, memo } from 'react';
 import { Route, Switch, useHistory, useLocation } from 'react-router-dom';
 
 import { privateRouters, publicRouters } from '../router';
@@ -7,7 +7,7 @@ import { ComponentIF } from '../router/interfaceRoute';
 
 const NotFound = lazy(() => import('../modules').then(module => ({ default: module.NotFound })));
 
-const PrivateNavigator = () => {
+const PrivateNavigator: React.FC = () => {
   const mergeRoute = [privateRouters, publicRouters];
   const location = useLocation();
   const history = useHistory();

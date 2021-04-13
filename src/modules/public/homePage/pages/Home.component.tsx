@@ -2,11 +2,13 @@ import React, { memo } from 'react';
 
 import { Layout, Row, Col, Skeleton } from 'antd';
 
-import BannerImage from '../../../../assets/images/public/nomalType/banner.png';
+// import Images from '../../../../assets/images';
+
+import Banner from '../../../../assets/images/public/nomalType/banner.png';
 
 const { Content } = Layout;
 
-const HomeComponent = () => {
+const HomeComponent: React.FC = () => {
   const loading = false;
 
   /* eslint-disable */
@@ -44,11 +46,11 @@ const HomeComponent = () => {
   return (
     <div className="home-page">
       <div className="banner-wrapper">
-        <img className="image" src={BannerImage} alt="banner" />
+        <img className="image" src={String(Banner)} alt="banner" />
       </div>
       <Content className="content-wrapper">
         <Row>
-          <Col xs={24} sm={24} md={2} lg={2} xl={2}></Col>
+          <Col xs={24} sm={24} md={2} lg={2} xl={2} />
           <Col xs={24} sm={24} md={20} lg={20} xl={20}>
             <div className="title">
               <h2>One Piece Hero</h2>
@@ -85,7 +87,7 @@ const HomeComponent = () => {
               ))}
             </Row>
           </Col>
-          <Col xs={24} sm={24} md={2} lg={2} xl={2}></Col>
+          <Col xs={24} sm={24} md={2} lg={2} xl={2} />
         </Row>
       </Content>
     </div>

@@ -1,41 +1,23 @@
 import React, { useState, memo } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { Form, Input, Button, Layout, Row, Col } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 
-interface LoginProps {
-  onLogin: Function;
-}
-
-interface finishValue {
-  email: string;
-  password: string;
-}
-
-const Login: React.FC<LoginProps> = props => {
-  const history = useHistory();
-
-  const [account, setAccount] = useState({
+const Login: React.FC = () => {
+  const [account] = useState({
     email: 'ittroller81@gmail.com',
     password: 'Minh-1995',
   });
 
-  const onFinish = (values: finishValue) => {
-    const { email, password } = values;
-    props.onLogin({ email, password }, onLoginSuccess);
-  };
-
-  const onLoginSuccess = () => history.push('/dashboard');
-
   return (
     <Row className="auth-page">
-      <Col span={6}></Col>
+      <Col span={6} />
       <Col span={12}>
         <Layout className="auth-form">
           <h3 className="head-form">LOGIN</h3>
 
-          <Form name="normal_login" className="login-form" initialValues={account} onFinish={onFinish}>
+          <Form name="normal_login" className="login-form" initialValues={account}>
             <Form.Item name="email" rules={[{ type: 'email' }, { required: true }]}>
               <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
             </Form.Item>
@@ -55,7 +37,7 @@ const Login: React.FC<LoginProps> = props => {
           </Form>
         </Layout>
       </Col>
-      <Col span={6}></Col>
+      <Col span={6} />
     </Row>
   );
 };

@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface ComponentIF {
   path: string;
   component: React.FC;
